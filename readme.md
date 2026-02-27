@@ -63,12 +63,11 @@ Como validación se corrió el pipeline tres veces sobre las mismas 207 URLs var
 
 Con concurrencia 10 se encontraron 7 listings menos, probablemente porque al abrir demasiadas páginas en paralelo desde la misma IP Airbnb empieza a throttlear algunas requests y devuelve páginas incompletas. Con 3 y 5 los resultados fueron idénticos, lo que sugiere que en una sola máquina el punto óptimo está en ese rango. Para escalar sin perder datos la solución no es subir la concurrencia local sino distribuir la carga en más workers con IPs distintas.
 
-## LOGS EJEMPLOS CON IA
+### LOGS EJEMPLOS CON IA
 2026-02-26 22:01:57,507 [INFO] Guardados 207 registros en output/listings_output.csv y output/listings_output.json
 
-==================================================
+
   Resumen del proceso:
-==================================================
   Total URLs procesadas : 207
   Success (Encontrada)  : 127
   Success (Sin data)    : 80
@@ -76,8 +75,7 @@ Con concurrencia 10 se encontraron 7 listings menos, probablemente porque al abr
   Blocked               : 0
   Con texto de reseñas  : 108
   Con AI insights       : 108
-==================================================
   Output CSV  : output/listings_output.csv
   Output JSON : output/listings_output.json
-==================================================
+
 
